@@ -1,10 +1,11 @@
 import { Stack } from "expo-router";
-import { AppProvider} from "../hooks";
+import { FontProvider } from "./Font";
+import { AuthProvider } from "./Auth";
 
 export function AppProvider({ children }) {
     return (
-        <AppProvider>
-            <Stack />
-        </AppProvider>
-    )
+        <FontProvider>
+            <AuthProvider>{children}</AuthProvider>
+        </FontProvider>
+    );
 }
