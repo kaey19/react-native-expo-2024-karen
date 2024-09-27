@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import {useUsersDatabase} from "../../database/useUsersDatabase"; 
 
 const AuthContex = createContext({});
 
@@ -14,30 +15,26 @@ export function AuthProvider({ children }) {
     role: null,
   });
 
+  const { authUser } = useUsersDatabase();
+
   const signIn = async ({ email, password }) => {
-    if (email === "super@email.com" && password === "Super123!") {
+    const response = await authUser({ email, password });
+
+    if (!response) {
       setUser({
-        autenticaded: true,
-        user: { id: 1, name: "Super", email },
-        role: Role.SUPER,
+        autenticaded: false,
+        user: null,
+        role: null,
       });
-    } else if (email === "adm@email.com" && password === "Adm123!") {
-      setUser({
-        autenticaded: true,
-        user: { id: 2, name: "Administrador", email },
-        role: Role.ADMIN,
-      });
-    } else if (email === "user@email.com" && password === "User123!") {
-      setUser({ 
-        autenticaded: true,
-        user: { id: 3, name: "Usuário Comun", email },
-        role: Role.USER,
-       });
-    } else {
-        setUser({ 
-            autenticaded: false, user: null, role: null });
-        }
-    
+    }
+
+    setUser({
+      autenticaded: true,
+      user: response,
+      role: response.role,
+    });
+
+       
   };
 
   const signOut = async () => {
