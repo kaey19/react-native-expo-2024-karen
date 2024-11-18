@@ -42,13 +42,8 @@ export function AuthProvider({ children }) {
     loadStoragedData();
   }, []);
 
-  useEffect(() => {
-    console.log("useEffect: ", user);
-  }, [user]);
-
   const signIn = async ({ email, password }) => {
     const response = await authUser({ email, password });
-    console.log(response);
 
     if (!response) {
       setUser({
@@ -73,10 +68,6 @@ export function AuthProvider({ children }) {
     setUser({});
   };
 
-  useEffect(() => {
-    console.log("AuthProvider: ", user);
-  }, [user]);
-
   if (user?.autenticaded === null) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -87,7 +78,7 @@ export function AuthProvider({ children }) {
       </View>
     );
   } 
-  
+
   return (
     <AuthContext.Provider value={{ user, signIn, signOut }}>
       {children}
