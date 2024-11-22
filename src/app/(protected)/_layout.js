@@ -30,7 +30,7 @@ function CustomDrawerContent(props) {
         <Text
           style={{ textAlign: "center", fontSize: 16, fontFamily: "regular" }}
         >
-          {user.user.nome}
+          {user?.user?.nome}
         </Text>
       </View>
       <DrawerContentScrollView {...props}>
