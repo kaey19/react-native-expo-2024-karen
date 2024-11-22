@@ -6,8 +6,7 @@ const { signOut } = useAuth();
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: '#FFF5E1' }}>
-      <Text>Home</Text>
-      <Button title="Sair" onPress={() => signOut()} />  
+      <Text>Home</Text> 
       </View>
   );
 }
