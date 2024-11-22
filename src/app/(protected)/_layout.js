@@ -60,7 +60,7 @@ const DrawerLayot = () => {
           name="index"
           options={{
             drawerLabel: "Principal",
-            headerTitle: "Pricipal",
+            headerTitle: "Principal",
             drawerIcon: () => (
               <Ionicons name="home-outline" size={20} color="black" />
             ),
