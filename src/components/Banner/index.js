@@ -17,13 +17,13 @@ export function Banner() {
         onPageSelected={onPageSelected}
       >
         <View key="1" style={styles.page}>
-          <Text style={styles.text}>Banner 1</Text>
+          <Text style={styles.text}>Bem-Vindo ao seu app de receitas offline</Text>
         </View>
         <View key="2" style={styles.page}>
-          <Text style={styles.text}>Banner 2</Text>
+          <Text style={styles.text}>Já cadastrou uma receita?</Text>
         </View>
         <View key="3" style={styles.page}>
-          <Text style={styles.text}>Banner 3</Text>
+          <Text style={styles.text}>Vá para minhas receitas para cadastrar</Text>
         </View>
       </PagerView>
       <View style={styles.bulletContent}>
@@ -45,17 +45,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
+    height: "30%",
   },
   page: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: "#52340a",
     padding: 10,
+    height: "100%",
   },
   text: {
     color: "#FFFFFF",
     fontFamily: "bold",
-    fontSize: 24,
+    fontSize: 30,
   },
   bulletContent: {
     flexDirection: "row",

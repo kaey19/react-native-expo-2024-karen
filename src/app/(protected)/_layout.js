@@ -18,7 +18,7 @@ function CustomDrawerContent(props) {
           justifyContent: "center",
           alignItems: "center",
           paddingVertical: 10,
-          backgroundColor: "#F5F5F5",
+          backgroundColor: "#d5f0df",
         }}
       >
         <Image
@@ -43,11 +43,11 @@ function CustomDrawerContent(props) {
           alignItems: "center",
           height: 50,
           margin: 50,
-          backgroundColor: "#000fff",
+          backgroundColor: "#ff4019",
           borderRadius: 5,
         }}
       >
-        <Text style={{ color: "white", fontFamily: "bold" }}>Deslogar</Text>
+        <Text style={{ color: "white", fontFamily: "bold"}}>Deslogar</Text>
       </TouchableOpacity>
     </View>
   );
@@ -69,8 +69,8 @@ const DrawerLayot = () => {
         <Drawer.Screen
           name="list"
           options={{
-            drawerLabel: "Listagem",
-            headerTitle: "Listagem",
+            drawerLabel: "Minhas Receitas",
+            headerTitle: "Minhas Receitas",
             drawerIcon: () => (
               <Ionicons name="list-outline" size={20} color="black" />
             ),
